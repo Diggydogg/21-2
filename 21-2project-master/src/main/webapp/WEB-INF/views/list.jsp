@@ -43,8 +43,9 @@ button {
 		<th>SensTemperature</th>
 		<th>Humidity</th>
 		<th>Wind</th>
-		<th>Description</th>
+		<th></th>
 	</tr>
+	<h2>1주일 평균 기온 : ${ave}</h2>
 	<c:forEach items="${list}" var="u" varStatus="status">
 		<tr>
 			<td>${fn:length(list)-status.index}</td>
@@ -54,7 +55,6 @@ button {
 			<td>${u.sensTemp}</td>
 			<td>${u.humidity}</td>
 			<td>${u.wind}</td>
-			<td>${u.desc}</td>
 			<td><a href="editform/${u.seq}">Edit</a></td>
 			<td><a href="javascript:delete_ok('${u.seq}')">Delete</a></td>
 		</tr>

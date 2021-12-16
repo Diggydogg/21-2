@@ -47,10 +47,6 @@ form {
 			<label>Wind</label>
 			<input type="text" name="wind" class="form-control">
 		</div>
-		<div class="form-group">
-			<label>Desc</label>
-			<input type="text" name="desc" class="form-control">
-		</div>
 		<button type="submit" class="btn btn-primary">submit</button>
 	</form>
 </body>

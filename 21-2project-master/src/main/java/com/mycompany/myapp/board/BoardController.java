@@ -1,5 +1,7 @@
 package com.mycompany.myapp.board;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,6 +18,18 @@ public class BoardController {
 	@RequestMapping(value = "/board/list", method = RequestMethod.GET)
 	public String boardlist(Model model) {
 		model.addAttribute("list", boardDAO.getBoardList());
+		float ave = 0;
+		List<BoardVO> t = boardDAO.getWeekAve();
+		if (t.size() >= 7) {
+			for (int i = 0; i < 7; i ++) {
+				ave += t.get(i).getTemp();
+			}
+			ave = ave / 7;
+		}
+		else {
+			ave = 0;
+		}
+		model.addAttribute("ave", ave);
 		return "list";
 	}
 	

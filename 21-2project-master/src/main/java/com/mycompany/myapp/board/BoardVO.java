@@ -14,7 +14,7 @@ public class BoardVO {
 	private float sensTemp;
 	private float humidity;
 	private float wind;
-	private String desc;
+	private String img;
 	
 	
 	
@@ -61,16 +61,16 @@ public class BoardVO {
 	public void setWind(float wind) {
 		this.wind = wind;
 	}
-	public String getDesc() {
-		return desc;
-	}
-	public void setDesc(String desc) {
-		this.desc = desc;
-	}
 	
 	
 	public void setSeq(int seq) {
 		this.seq = seq;
+	}
+	public void setImg(String img) {
+		this.img = img;
+	}
+	public String getImg(String img) {
+		return img;
 	}
 
 	
